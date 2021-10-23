@@ -1,0 +1,30 @@
+body {
+  font-family: "dmsans";
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.card-photographer {
+  &__name {
+    font-size: 2.25rem;
+  }
+  &__location {
+    font-size: 0.812rem;
+    padding-bottom: 2px;
+  }
+  &__bio {
+    font-size: 0.625rem;
+    padding-bottom: 4px;
+  }
+  &__price {
+    font-size: 0.562rem;
+  }
+}
+// components
+
+.list-filters__card {
+  font-size: 0.875rem;
+}
