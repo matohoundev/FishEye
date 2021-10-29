@@ -1,12 +1,13 @@
 header {
+  padding: 5% 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-row-gap: 10%;
   justify-items: center;
-  padding: 5% 0;
   @media all and (min-width: $sm) {
-    padding: 2% 0;
+    height: 12vh;
+    padding: 0;
     display: flex;
     justify-content: space-around;
   }
