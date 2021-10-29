@@ -5,6 +5,9 @@ body {
 h1 {
   font-weight: 400;
   font-size: 0.875rem;
+  @media all and (min-width: $sm) {
+    font-size: 2.25rem;
+  }
 }
 
 .card-photographer {

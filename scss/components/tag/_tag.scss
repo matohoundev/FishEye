@@ -6,4 +6,7 @@
   border: 0.5px solid #c4c4c4;
   box-sizing: border-box;
   border-radius: $arrondi;
+  @media all and (min-width: $sm) {
+    padding: 0 4px;
+  }
 }
