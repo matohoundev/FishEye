@@ -4,32 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="public/css/style.css" />
+    <title>FishEye</title>
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2186d3ac63.js"
+      crossorigin="anonymous"
+      async
+    ></script>
   </head>
   <body>
-    <header>
-      <img src="" alt="" />
+    <header class="header-photographer">
+      <a href="../index.html">
+        <img src="../assets/logo/logo.svg" alt="logo FishEye" class="logo" />
+      </a>
     </header>
 
-    <section></section>
-    <div>
-        <p>Trier par</p>
+    <section class="banner-photographer">
+      <div class="banner-photographer__info">
+        <div class="contain__info">
+          <p class="card-photographer__name">Mimi Keel</p>
+          <p class="card-photographer__location">London, UK</p>
+          <p class="card-photographer__bio">Voir le beau dans le quotidien</p>
+          <ul class="list-filters">
+            <li class="list-filters__card">#portrait</li>
+            <li class="list-filters__card">#events</li>
+            <li class="list-filters__card">#travel</li>
+            <li class="list-filters__card">#animals</li>
+          </ul>
+        </div>
+        <div class="photographer-btn">
+          <button>Contactez-moi</button>
+        </div>
+      </div>
+      <img
+        src="../assets/images/Photographers ID Photos/MimiKeel.jpg"
+        alt=""
+        class="banner-photographer__img"
+      />
+    </section>
+    <div class="filters">
+      <p>Trier par</p>
 
-<select name="sort" id="sort-select">
-    <option value="popularity">Popularité</option>
-    <option value="date">Date</option>
-    <option value="cat">Cat</option>
-</select>
+      <select name="sort" id="sort-select">
+        <option value="popularity">Popularité</option>
+        <option value="date">Date</option>
+        <option value="cat">Cat</option>
+      </select>
     </div>
-    <section>
-      <ul>
+
+    <section class="content-photography">
+      <ul class="list-photography">
         <li>
-          <a href=""
-            ><img src="" alt="" />
+          <a href="" class="card-photography">
+            <img
+              src="../assets/images/Mimi/Animals_Rainbow.jpg"
+              alt=""
+              class="card-photography__img"
+            />
             <div>
-              <p></p>
-              <p><img src="" alt="" /></p>
+              <p>Arc-en-ciel</p>
+              <p>12 <i class="fas fa-heart"></i></p>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="" class="card-photography">
+            <img
+              src="../assets/images/Mimi/Animals_Rainbow.jpg"
+              alt=""
+              class="card-photography__img"
+            />
+            <div>
+              <p>Arc-en-ciel</p>
+              <p>12 <i class="fas fa-heart"></i></p>
             </div>
           </a>
         </li>
@@ -37,42 +85,56 @@
     </section>
 
     <div class="lighbox-modal">
-        <img src="" alt="">
-        <div>
-            <img src="" alt="">
-            <p></p>
-        </div>
-        <div>
-            <img src="" alt="">
-            <img src="" alt="">
-        </div>
+      <img src="" alt="" />
+      <div>
+        <img src="" alt="" />
+        <p></p>
+      </div>
+      <div>
+        <img src="" alt="" />
+        <img src="" alt="" />
+      </div>
     </div>
 
     <div class="form-modal">
-        <div>
-            <h1>Contactez-moi </h1>
-            <img src="" alt="">
+      <div>
+        <h1>Contactez-moi</h1>
+        <img src="" alt="" />
+      </div>
+      <form name="contact" action="">
+        <div class="formData">
+          <label for="firstname"></label>
+          <input
+            id="firstname"
+            type="text"
+            class="text-control"
+            name="firstname"
+          />
         </div>
-        <form name="contact" action="">
-            <div class="formData">
-                <label for="firstname"></label>
-                <input id="firstname" type="text" class="text-control" name="firstname" >
-            </div>
-            <div class="formData">
-                <label for="lastname"></label>
-                <input id="lastname" type="text" class="text-control" name="firstname" >
-            </div>
-            <div class="formData">
-                <label for="firstname"></label>
-                <input id="firstname" type="text" class="text-control" name="firstname" >
-            </div>
-            <div class="formData">
-                <label for="message"></label>
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            </div>
-            <input class="btn-submit" type="submit" class="btn" value="Envoyer">
-        </form>
+        <div class="formData">
+          <label for="lastname"></label>
+          <input
+            id="lastname"
+            type="text"
+            class="text-control"
+            name="firstname"
+          />
+        </div>
+        <div class="formData">
+          <label for="firstname"></label>
+          <input
+            id="firstname"
+            type="text"
+            class="text-control"
+            name="firstname"
+          />
+        </div>
+        <div class="formData">
+          <label for="message"></label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <input class="btn-submit" type="submit" class="btn" value="Envoyer" />
+      </form>
     </div>
-
   </body>
 </html>

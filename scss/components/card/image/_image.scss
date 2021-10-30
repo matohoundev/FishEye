@@ -1,0 +1,24 @@
+.card-photography {
+  &__img {
+    width: 100%;
+    max-width: 370px;
+    height: 25vh;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: 0 -50px;
+    border-radius: $curler;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $main-color;
+    height: 3vh;
+    min-height: 10px;
+    max-height: 30px;
+    margin-bottom: 5px;
+    .fa-heart {
+      font-size: 14px;
+    }
+  }
+}

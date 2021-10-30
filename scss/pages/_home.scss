@@ -1,0 +1,21 @@
+.all-photographers {
+  @media all and (min-width: $md) {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  @media all and (min-width: $xlm) {
+    justify-content: center;
+  }
+  li {
+    margin: 0 2vw;
+    @media all and (min-width: $lm) {
+      margin: 0vw;
+    }
+    @media all and (min-width: $xlm) {
+      margin: 0 5vw;
+    }
+  }
+}
