@@ -31,6 +31,33 @@ button {
     font-size: 0.562rem;
   }
 }
+
+.banner-photographer {
+  .card-photographer {
+    @media all and (min-width: $md) {
+      &__name {
+        font-size: 4rem;
+      }
+      &__location {
+        font-size: 1.5rem;
+      }
+      &__bio {
+        font-size: 1.125rem;
+      }
+    }
+  }
+  @media all and (min-width: $md) {
+    .list-filters__card {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.filters {
+  p {
+    font-size: 1.125rem;
+  }
+}
 // components
 
 .list-filters__card {
