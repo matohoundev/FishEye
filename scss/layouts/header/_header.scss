@@ -47,5 +47,8 @@ header {
     padding: 5% 2%;
     display: flex;
     justify-content: flex-start;
+    @media all and (min-width: $md) {
+      padding: 0 2%;
+    }
   }
 }

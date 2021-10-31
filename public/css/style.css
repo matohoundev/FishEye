@@ -67,6 +67,11 @@ h1 {
   }
 }
 
+button {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .card-photographer__name {
   font-size: 2.25rem;
 }
@@ -147,6 +152,11 @@ header.header-photographer {
   display: flex;
   justify-content: flex-start;
 }
+@media all and (min-width: 1024px) {
+  header.header-photographer {
+    padding: 0 2%;
+  }
+}
 
 @media all and (min-width: 1024px) {
   .all-photographers {
@@ -191,7 +201,14 @@ header.header-photographer {
 }
 .banner-photographer__info .contain__info .list-filters {
   display: flex;
-  justify-content: space-between;
+}
+.banner-photographer__info .contain__info .list-filters__card {
+  margin-right: 5px;
+}
+.banner-photographer__info .photographer-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 25vw;
 }
 .banner-photographer__img {
   width: 110px;
@@ -214,7 +231,12 @@ header.header-photographer {
 }
 
 button {
+  width: 50vw;
+  height: 35px;
   background-color: #901c1c;
+  border: none;
+  border-radius: 5px;
+  color: white;
 }
 
 .card-photography__img {
@@ -232,6 +254,7 @@ button {
   justify-content: space-between;
   color: #901c1c;
   height: 3vh;
+  max-width: 370px;
   min-height: 10px;
   max-height: 30px;
   margin-bottom: 5px;

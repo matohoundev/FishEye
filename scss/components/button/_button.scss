@@ -1,3 +1,8 @@
 button {
+  width: 50vw;
+  height: 35px;
   background-color: $main-color;
+  border: none;
+  border-radius: $curler;
+  color: white;
 }
