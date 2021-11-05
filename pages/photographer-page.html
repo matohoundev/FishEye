@@ -168,56 +168,67 @@
     </section>
 
     <div class="lightbox-modal">
-      <i class="fas fa-chevron-left"></i>
-      <div class="content-img">
-        <img src="../assets/images/Mimi/Animals_Rainbow.jpg" alt="" />
-        <p>Arc-en-ciel</p>
-      </div>
-      <div class="content-fas">
-        <i class="fas fa-times"></i>
-        <i class="fas fa-chevron-right"></i>
+      <div class="lightbox-modal-content">
+        <div class="lightbox-modal-content__left">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="lightbox-modal-content__img">
+          <img src="../assets/images/Mimi/Animals_Rainbow.jpg" alt="" />
+          <p>Arc-en-ciel</p>
+        </div>
+        <div class="lightbox-modal-content__right">
+          <i class="fas fa-times"></i>
+          <i class="fas fa-chevron-right"></i>
+        </div>
       </div>
     </div>
 
-    <div class="form-modal">
-      <div>
-        <h1>Contactez-moi</h1>
-        <img src="" alt="" />
+    <div class="content-form-modal">
+      <div class="form-modal">
+        <div>
+          <h1>Contactez-moi</h1>
+          <img src="" alt="" />
+        </div>
+        <form name="contact" action="">
+          <div class="formData">
+            <label for="firstname"></label>
+            <input
+              id="firstname"
+              type="text"
+              class="text-control"
+              name="firstname"
+            />
+          </div>
+          <div class="formData">
+            <label for="lastname"></label>
+            <input
+              id="lastname"
+              type="text"
+              class="text-control"
+              name="firstname"
+            />
+          </div>
+          <div class="formData">
+            <label for="firstname"></label>
+            <input
+              id="firstname"
+              type="text"
+              class="text-control"
+              name="firstname"
+            />
+          </div>
+          <div class="formData">
+            <label for="message"></label>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <input class="btn-submit" type="submit" class="btn" value="Envoyer" />
+        </form>
       </div>
-      <form name="contact" action="">
-        <div class="formData">
-          <label for="firstname"></label>
-          <input
-            id="firstname"
-            type="text"
-            class="text-control"
-            name="firstname"
-          />
-        </div>
-        <div class="formData">
-          <label for="lastname"></label>
-          <input
-            id="lastname"
-            type="text"
-            class="text-control"
-            name="firstname"
-          />
-        </div>
-        <div class="formData">
-          <label for="firstname"></label>
-          <input
-            id="firstname"
-            type="text"
-            class="text-control"
-            name="firstname"
-          />
-        </div>
-        <div class="formData">
-          <label for="message"></label>
-          <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <input class="btn-submit" type="submit" class="btn" value="Envoyer" />
-      </form>
     </div>
 
     <div class="rank">
