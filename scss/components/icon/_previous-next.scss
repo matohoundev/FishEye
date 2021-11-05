@@ -1,0 +1,7 @@
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 20px;
+  @media all and (min-width: $sm) {
+    font-size: 40px;
+  }
+}

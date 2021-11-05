@@ -28,6 +28,7 @@
       position: fixed;
       bottom: 20px;
       left: 25vw;
+      z-index: 2;
       @media all and (min-width: $md) {
         position: static;
       }
@@ -59,10 +60,89 @@
   }
 }
 
+.list-photography {
+  @media all and (min-width: $sm) {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+  li {
+    @media all and (min-width: $sm) {
+      margin: 0 4% 2% 0;
+    }
+  }
+}
+
 .lightbox-modal {
   display: none;
+  // position: fixed;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // top: 0;
+  // left: 0;
+  // width: 100vw;
+  // height: 100vh;
+  // z-index: 3;
+  // background-color: white;
+  // color: $main-color;
+  // @media all and (min-width: $sm) {
+  //   width: 100vw;
+  //   height: 100vh;
+  // }
+  // .content-img {
+  //   width: 289px;
+  //   height: 248px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   img {
+  //     object-fit: cover;
+  //     border-radius: $curler;
+  //     @media all and (min-width: $sm) {
+  //       width: 1050px;
+  //       height: 900px;
+  //     }
+  //   }
+  //   p {
+  //     padding-top: 2%;
+  //   }
+  // }
+  // .content-fas {
+  //   height: 100%;
+  //   display: flex;
+  //   padding-left: 5%;
+  //   flex-direction: column;
+  //   border: 1px solid blue;
+  // }
 }
 
 .form-modal {
   display: none;
+}
+
+.rank {
+  display: none;
+  @media all and (min-width: $sm) {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    right: 2vw;
+    width: 376px;
+    height: 89px;
+    padding: 0 31px;
+    background-color: $secondary-color-box;
+    border-radius: $curler $curler 0 0;
+    z-index: 1;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // border: 1px solid blue;
+    p {
+      padding-right: 10px;
+    }
+  }
 }

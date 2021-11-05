@@ -52,6 +52,11 @@ body,
 .content-photography {
   padding: 10% 0;
 }
+@media all and (min-width: 1024px) {
+  .content-photography {
+    padding: 3% 0;
+  }
+}
 
 body {
   font-family: "dmsans";
@@ -115,6 +120,10 @@ button,
   .list-filters__card {
     font-size: 0.875rem;
   }
+}
+
+.rank {
+  font-size: 1.5rem;
 }
 
 header {
@@ -239,6 +248,7 @@ header.header-photographer {
   position: fixed;
   bottom: 20px;
   left: 25vw;
+  z-index: 2;
 }
 @media all and (min-width: 1024px) {
   .banner-photographer__info .photographer-btn {
@@ -274,12 +284,53 @@ header.header-photographer {
   }
 }
 
+@media all and (min-width: 768px) {
+  .list-photography {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+}
+@media all and (min-width: 768px) {
+  .list-photography li {
+    margin: 0 4% 2% 0;
+  }
+}
+
 .lightbox-modal {
   display: none;
 }
 
 .form-modal {
   display: none;
+}
+
+.rank {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  .rank {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    right: 2vw;
+    width: 376px;
+    height: 89px;
+    padding: 0 31px;
+    background-color: #db8876;
+    border-radius: 5px 5px 0 0;
+    z-index: 1;
+  }
+}
+.rank div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rank div p {
+  padding-right: 10px;
 }
 
 button {
@@ -353,6 +404,17 @@ button {
   object-position: 0 -50px;
   border-radius: 5px;
 }
+@media all and (min-width: 414px) {
+  .card-photography__img {
+    width: 45vw;
+    max-width: 350px;
+  }
+}
+@media all and (min-width: 768px) {
+  .card-photography__img {
+    height: 300px;
+  }
+}
 .card-photography div {
   display: flex;
   align-items: center;
@@ -405,6 +467,26 @@ button {
 }
 .card-photographer .list-filters__card {
   margin: 4px 5px;
+}
+
+.fa-times {
+  font-size: 20px;
+}
+@media all and (min-width: 768px) {
+  .fa-times {
+    font-size: 40px;
+  }
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 20px;
+}
+@media all and (min-width: 768px) {
+  .fa-chevron-left,
+.fa-chevron-right {
+    font-size: 40px;
+  }
 }
 
 .list-filters__card {
