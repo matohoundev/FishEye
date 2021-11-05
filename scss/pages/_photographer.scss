@@ -48,6 +48,9 @@
 
 .filters {
   display: none;
+  .sort-by {
+    padding-top: 22px;
+  }
   @media all and (min-width: $md) {
     display: flex;
     justify-content: space-between;

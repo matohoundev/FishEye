@@ -1,12 +1,40 @@
-select {
-  width: 50vw;
-  height: 35px;
-  background-color: $main-color;
-  border: none;
+.sort-select {
+  width: 170px;
+  height: 100%;
   border-radius: $curler;
-  color: white;
-  @media all and (min-width: $md) {
-    width: 170px;
-    height: 69px;
-  }
+  background-color: $main-color;
+  overflow: hidden;
+}
+.btn-top {
+  padding: 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $main-color;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #f1f1f1;
+}
+.btn-top svg {
+  width: 20px;
+}
+.bloc-links {
+  transition: height 0.2s ease-in-out;
+  height: 0;
+  padding: 0 10px;
+}
+.bloc-links li {
+  list-style-type: none;
+  padding: 15px 0 17px 5px;
+  border-top: 1px solid white;
+}
+.bloc-links li a {
+  color: #f1f1f1;
+  margin-left: 5px;
+}
+.bloc-links li:last-child {
+  padding-bottom: 25px;
 }
