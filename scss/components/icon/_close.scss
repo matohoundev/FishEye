@@ -3,4 +3,9 @@
   @media all and (min-width: $sm) {
     font-size: 40px;
   }
+  &--clear {
+    padding-top: 5px;
+    font-size: 1.65rem;
+    color: $color-clear;
+  }
 }

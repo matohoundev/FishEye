@@ -67,6 +67,23 @@ button,
   }
 }
 
+.form-modal {
+  h1 {
+    font-family: "dmsans_regular";
+    font-weight: 400;
+    font-size: 2.25rem;
+  }
+  label {
+    font-family: "dmsans_regular";
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+  .btn-submit {
+    font-family: "dmsans";
+    font-size: 1.125rem;
+  }
+}
+
 .rank {
   font-size: 1.5rem;
 }

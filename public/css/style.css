@@ -122,6 +122,21 @@ button,
   }
 }
 
+.form-modal h1 {
+  font-family: "dmsans_regular";
+  font-weight: 400;
+  font-size: 2.25rem;
+}
+.form-modal label {
+  font-family: "dmsans_regular";
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.form-modal .btn-submit {
+  font-family: "dmsans";
+  font-size: 1.125rem;
+}
+
 .rank {
   font-size: 1.5rem;
 }
@@ -297,14 +312,6 @@ header.header-photographer {
   }
 }
 
-.lightbox-modal {
-  display: none;
-}
-
-.content-form-modal {
-  display: none;
-}
-
 .rank {
   display: none;
 }
@@ -343,6 +350,21 @@ button {
 }
 @media all and (min-width: 1024px) {
   button {
+    width: 170px;
+    height: 69px;
+  }
+}
+
+.btn-submit {
+  width: 50vw;
+  height: 35px;
+  background-color: #901c1c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+@media all and (min-width: 1024px) {
+  .btn-submit {
     width: 170px;
     height: 69px;
   }
@@ -469,6 +491,10 @@ button {
   margin: 4px 5px;
 }
 
+.content-form-modal {
+  display: none;
+}
+
 .fa-times {
   font-size: 20px;
 }
@@ -476,6 +502,11 @@ button {
   .fa-times {
     font-size: 40px;
   }
+}
+.fa-times--clear {
+  padding-top: 5px;
+  font-size: 1.65rem;
+  color: #ffffff;
 }
 
 .fa-chevron-left,
@@ -487,6 +518,10 @@ button {
 .fa-chevron-right {
     font-size: 40px;
   }
+}
+
+.lightbox-modal {
+  display: none;
 }
 
 .list-filters__card {
