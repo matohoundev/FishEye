@@ -5,10 +5,19 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch ./scss/main.scss:public/css/style.css",
-    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/"
+    "sass": "sass --watch ./src/assets/scss/main.scss:public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/",
+    "build": "webpack",
+    "webpack": "webpack --watch"
   },
   "author": "AM",
   "license": "ISC",
-  "browserslist": "last 4 versions"
+  "browserslist": "last 4 versions",
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
+  }
 }

@@ -1,4 +1,3 @@
-const select = document.querySelector(".select");
 const blocLinks = document.querySelector(".bloc-links");
 const btnDrop = document.querySelector(".btn-top");
 const liItems = document.querySelectorAll(".dropdown li");
@@ -22,3 +21,5 @@ function toggleDropDown() {
 }
 
 liItems.forEach((li) => li.addEventListener("click", toggleDropDown));
+
+export { toggleDropDown };
