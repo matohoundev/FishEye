@@ -5,6 +5,7 @@
     align-items: center;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    background-color: red;
   }
   @media all and (min-width: $xlm) {
     justify-content: center;
