@@ -21,15 +21,9 @@
     <section class="banner-photographer">
       <div class="banner-photographer__info">
         <div class="contain__info">
-          <p class="card-photographer__name">Mimi Keel</p>
+          <h1 class="card-photographer__name">Mimi Keel</h1>
           <p class="card-photographer__location">London, UK</p>
           <p class="card-photographer__bio">Voir le beau dans le quotidien</p>
-          <ul class="list-filters">
-            <li class="list-filters__card">#portrait</li>
-            <li class="list-filters__card">#events</li>
-            <li class="list-filters__card">#travel</li>
-            <li class="list-filters__card">#animals</li>
-          </ul>
         </div>
         <div class="photographer-btn">
           <button>Contactez-moi</button>
@@ -46,7 +40,11 @@
       <p class="sort-by">Trier par</p>
 
       <div class="sort-select">
-        <button class="btn-top">
+        <button
+          class="btn-top"
+          aria-haspopup="sort-select"
+          aria-expanded="false"
+        >
           <span>Popularité</span>
           <svg
             fill="#f1f1f1"
@@ -78,7 +76,7 @@
       </div>
     </div>
 
-    <section class="content-photography">
+    <main class="content-photography">
       <ul class="list-photography">
         <li>
           <a href="" class="card-photography">
@@ -164,7 +162,7 @@
           </a>
         </li>
       </ul>
-    </section>
+    </main>
 
     <div class="lightbox-modal">
       <div class="lightbox-modal-content">
@@ -208,7 +206,7 @@
             />
           </div>
           <div class="formData">
-            <label for="firstname">Email</label>
+            <label for="email">Email</label>
             <input
               id="firstname"
               type="text"

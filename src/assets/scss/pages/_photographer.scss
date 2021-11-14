@@ -11,17 +11,12 @@
     @media all and (min-width: $md) {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       width: 30%;
     }
     .contain__info {
       .card-photographer__bio {
         color: $color-grey;
-      }
-      .list-filters {
-        display: flex;
-        &__card {
-          margin-right: 5px;
-        }
       }
     }
     .photographer-btn {

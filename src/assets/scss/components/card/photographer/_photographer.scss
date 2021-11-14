@@ -25,12 +25,4 @@
     color: $color-grey;
     padding-bottom: 5px;
   }
-  .list-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    &__card {
-      margin: 4px 5px;
-    }
-  }
 }
