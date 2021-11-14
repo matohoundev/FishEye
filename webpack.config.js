@@ -19,18 +19,6 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "images",
-            },
-          },
-        ],
-      },
-      {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
@@ -44,6 +32,20 @@ module.exports = {
           // Compiles Sass to CSS
           "sass-loader",
         ],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "[path]/[name].[ext]",
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "[path]/[name].[ext]",
+        },
       },
       {
         test: /\.m?js$/,
@@ -61,6 +63,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./src/index.html"),
       filename: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/photographer-page.html",
+      filename: "pages/photographer-page.html",
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
