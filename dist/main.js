@@ -251,7 +251,7 @@ contact.addEventListener('click', displayModal); // close modal event
 btnCloseContact.addEventListener('click', closeModal);
 
 function displayModal() {
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
 }
 
 function closeModal() {

@@ -11,7 +11,7 @@ contact.addEventListener('click', displayModal);
 btnCloseContact.addEventListener('click', closeModal);
 
 function displayModal() {
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
 }
 
 function closeModal() {
