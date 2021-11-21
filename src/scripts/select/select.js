@@ -1,11 +1,11 @@
-const blocLinks = document.querySelector(".bloc-links");
-const btnDrop = document.querySelector(".btn-top");
-const liItems = document.querySelectorAll(".dropdown li");
-const svg = document.querySelector("#Layer_1");
+const blocLinks = document.querySelector('.bloc-links');
+const btnDrop = document.querySelector('.btn-top');
+const liItems = document.querySelectorAll('.dropdown li');
+const svg = document.querySelector('#Layer_1');
 
 let toggleIndex;
 
-btnDrop.addEventListener("click", toggleDropDown);
+btnDrop.addEventListener('click', toggleDropDown);
 
 function toggleDropDown() {
   if (!toggleIndex) {
@@ -20,6 +20,6 @@ function toggleDropDown() {
   toggleIndex = false;
 }
 
-liItems.forEach((li) => li.addEventListener("click", toggleDropDown));
+liItems.forEach((li) => li.addEventListener('click', toggleDropDown));
 
 export { toggleDropDown };

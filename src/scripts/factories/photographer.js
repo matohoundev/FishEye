@@ -27,17 +27,17 @@ function photographerFactory(data) {
     bio.setAttribute('class', 'card-photographer__bio');
     bio.textContent = tagline;
 
-    const price = document.createElement('p');
-    price.setAttribute('class', 'card-photographer__price');
-    price.textContent = `${price}€`;
+    const cost = document.createElement('p');
+    cost.setAttribute('class', 'card-photographer__price');
+    cost.textContent = `${price}€`;
 
     li.appendChild(a);
     li.appendChild(img);
     li.appendChild(h2);
     li.appendChild(location);
     li.appendChild(bio);
-    li.appendChild(price);
+    li.appendChild(cost);
     return li;
   }
-  return { name, picture, getUserCardDOM };
+  return { name, picture, city, country, tagline, price, getUserCardDOM };
 }

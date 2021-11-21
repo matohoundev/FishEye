@@ -1,60 +1,60 @@
 .content-form-modal {
   display: none;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100vw;
-  //   height: 100vh;
-  //   z-index: 3;
-  //   background-color: $transparent;
-  //   @media all and (min-width: $md) {
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //   }
-  //   .form-modal {
-  //     width: 100vw;
-  //     height: 100vh;
-  //     padding: 20px 17px 5% 17px;
-  //     border-radius: $curler;
-  //     background-color: $secondary-color-box;
-  //     @media all and (min-width: $md) {
-  //       width: 50vw;
-  //       max-width: 669px;
-  //       height: 90vh;
-  //       max-height: 900px;
-  //     }
-  //     &__head {
-  //       display: flex;
-  //       justify-content: space-between;
-  //       margin-bottom: 5%;
-  //     }
-  //     form {
-  //       display: flex;
-  //       flex-direction: column;
-  //       justify-content: center;
-  //       align-items: center;
-  //       @media all and (min-width: $md) {
-  //         align-items: flex-start;
-  //       }
-  //       .formData {
-  //         display: flex;
-  //         flex-direction: column;
-  //         margin-bottom: 6%;
-  //         width: 100%;
-  //         input,
-  //         textarea {
-  //           border: none;
-  //           border-radius: $curler;
-  //         }
-  //         input {
-  //           height: 4vh;
-  //         }
-  //         label {
-  //           color: $label-color;
-  //           margin-bottom: 1%;
-  //         }
-  //       }
-  //     }
-  //   }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  background-color: $transparent;
+  @media all and (min-width: $md) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-modal {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px 17px 5% 17px;
+    border-radius: $curler;
+    background-color: $secondary-color-box;
+    @media all and (min-width: $md) {
+      width: 50vw;
+      max-width: 669px;
+      height: 90vh;
+      max-height: 900px;
+    }
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @media all and (min-width: $md) {
+        align-items: flex-start;
+      }
+      .formData {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 6%;
+        width: 100%;
+        input,
+        textarea {
+          border: none;
+          border-radius: $curler;
+        }
+        input {
+          height: 4vh;
+        }
+        label {
+          color: $label-color;
+          margin-bottom: 1%;
+        }
+      }
+    }
+  }
 }

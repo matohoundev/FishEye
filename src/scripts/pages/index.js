@@ -8,7 +8,7 @@ async function getPhotographers() {
       country: 'France',
       tagline: 'Ceci est ma data test',
       price: 400,
-      portrait: 'account.png',
+      portrait: 'MimiKeel.jpg',
     },
     {
       name: 'Autre data test',
@@ -17,7 +17,7 @@ async function getPhotographers() {
       country: 'UK',
       tagline: 'Ceci est ma data test 2',
       price: 500,
-      portrait: 'account.png',
+      portrait: 'MimiKeel.jpg',
     },
   ];
   // et bien retourner le tableau photographers seulement une fois
@@ -30,6 +30,7 @@ async function displayData(photographers) {
   const photographersSection = document.querySelector('.all-photographers');
 
   photographers.forEach((photographer) => {
+    // console.log(photographer);
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
@@ -40,6 +41,7 @@ async function init() {
   // Récupère les datas des photographes
   const { photographers } = await getPhotographers();
   displayData(photographers);
+  // console.log(photographers);
 }
 
 init();
