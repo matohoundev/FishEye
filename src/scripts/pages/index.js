@@ -1,3 +1,10 @@
+// window.onload = function(){
+
+//   $.get("photographers.json", function(data){
+//       console.log(data);
+//       });
+//   }
+
 async function getPhotographers() {
   // Penser à remplacer par les données récupérées dans le json
   const photographers = [
@@ -30,7 +37,6 @@ async function displayData(photographers) {
   const photographersSection = document.querySelector('.all-photographers');
 
   photographers.forEach((photographer) => {
-    // console.log(photographer);
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
@@ -41,7 +47,6 @@ async function init() {
   // Récupère les datas des photographes
   const { photographers } = await getPhotographers();
   displayData(photographers);
-  // console.log(photographers);
 }
 
 init();

@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="public/css/style.css">
     <title>FishEye</title>
   </head>
   <body>
     <header>
       <a href="#">
         <img
-          src="./assets/logo/logo.svg"
+          src="./src/assets/logo/logo.svg"
           alt="logo entreprise (FishEye)"
           class="logo"
         />
@@ -20,10 +22,10 @@
     </header>
     <main>
       <ul class="all-photographers">
-        <li>
-          <a href="./pages/photographer-page.html" class="card-photographer">
+        <!-- <li>
+          <a href="./src/pages/photographer-page.html" class="card-photographer">
             <img
-              src="./assets/images/Photographers ID Photos/MimiKeel.jpg"
+              src="./src/assets/images/Photographers ID Photos/MimiKeel.jpg"
               alt=""
               class="card-photographer__img"
             />
@@ -32,8 +34,12 @@
             <p class="card-photographer__bio">Voir le beau dans le quotidien</p>
             <p class="card-photographer__price">400€/jour</p>
           </a>
-        </li>
+        </li> -->
       </ul>
     </main>
+    <script src="./src/data/photographers.json"></script>
+    <script src="./src/scripts/factories/photographer.js"></script>
+    <script src="./src/scripts/pages/index.js"></script>
+    <script src="./src/scripts/pages/photographers.js"></script>
   </body>
 </html>

@@ -21,5 +21,3 @@ function toggleDropDown() {
 }
 
 liItems.forEach((li) => li.addEventListener('click', toggleDropDown));
-
-export { toggleDropDown };

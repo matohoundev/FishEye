@@ -2,8 +2,6 @@ const modal = document.querySelector('.content-form-modal');
 const contact = document.querySelector('#btn-contact');
 const btnCloseContact = document.querySelector('.close-contact');
 
-console.log(contact);
-
 // launch modal event
 contact.addEventListener('click', displayModal);
 
@@ -17,5 +15,3 @@ function displayModal() {
 function closeModal() {
   modal.style.display = 'none';
 }
-
-export { displayModal, closeModal };

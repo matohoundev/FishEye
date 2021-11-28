@@ -1,7 +1,7 @@
 function photographerFactory(data) {
   const { name, portrait, city, country, tagline, price } = data;
 
-  const picture = `../../assets/images/Photographers ID Photos/${portrait}`;
+  const picture = `src/assets/images/Photographers ID Photos/${portrait}`;
 
   function getUserCardDOM() {
     const li = document.createElement('li');
@@ -14,7 +14,7 @@ function photographerFactory(data) {
     img.setAttribute('src', picture);
     img.setAttribute('alt', `photo du photographe ${name}`);
     img.setAttribute('class', 'card-photographer__img');
-
+console.log(img);
     const h2 = document.createElement('h2');
     h2.setAttribute('class', 'card-photographer__name');
     h2.textContent = name;
