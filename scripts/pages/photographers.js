@@ -1,7 +1,8 @@
 //Mettre le code JavaScript lié à la page photographer.html
-// import Profil from "../factories/profil.js";
+import Profil from '../factories/profil.js';
 
 function path() {
+    // on check l'url pour trouver l'id
     const url = window.location.search;
     const urlParams = new URLSearchParams(url);
     const id = urlParams.get('id');
@@ -9,27 +10,21 @@ function path() {
 }
 
 function getProfil(id, data) {
-    const photographer = data.filter(profil => profil.id == id);
+    // on récupère le bon profil en fonction de l'id inscrit dans l'url
+    const [ photographer ] = data.filter(profil => profil.id == id);
 
-    console.log(photographer);
     return photographer;
 }
 
-// async function displayData(photographers) {
-//     const photographersSection = document.querySelector(".banner-photographer");
-//     // const id = window.location.search.split("id=")[1];
-
-//     // const profil = !id ? photographers : photographers.filter(photographer => photographer.id == id);
-
-//     const photographerModel = new Profil().profilHeader(profil);
-//     const userCardDOM = photographerModel.getProfil();
-//     photographersSection.appendChild(userCardDOM);
-// }
+async function displayData(profil) {
+    // on créé un profil avec les data reçu
+    const photographerModel = new Profil().profilHeader(profil);
+    photographerModel.getProfil();
+}
 
 export default async function initProfil(data) {
-    // Récupère les datas des photographes
+    // Récupère les data d'un photographe
     const id = await path();
-    getProfil(id, data);
-    // const { photographers } = await getProfil(data);
-    // displayData(photographers);
+    const profil = await getProfil(id, data);
+    displayData(profil);
 }

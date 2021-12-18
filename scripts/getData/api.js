@@ -6,7 +6,7 @@ export default class ApiServices {
  
         const dataPhotographers = [...data.photographers];
 
-        return { dataPhotographers };
+        return { 'photographers' : dataPhotographers };
     }
 
     async getMedia() {
@@ -15,6 +15,6 @@ export default class ApiServices {
 
         const dataMedia = [...data.media];
 
-        return { dataMedia };
+        return { 'media' : dataMedia };
     }
 }

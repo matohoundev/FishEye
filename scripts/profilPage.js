@@ -6,8 +6,8 @@ import initProfil from './pages/photographers.js';
 
 (function appDispatch() {
     new ApiServices().getPhotographers().then((data) => {
-        initProfil(data.dataPhotographers);
+        initProfil(data.photographers);
     }).catch(() => {
-        console.error('error Api');
+        console.error('error Api photographe');
     });
 })();

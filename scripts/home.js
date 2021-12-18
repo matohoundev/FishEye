@@ -6,7 +6,7 @@ import init from './pages/index.js';
 
 (function appDispatch() {
     new ApiServices().getPhotographers().then((data) => {
-        init(data.dataPhotographers);
+        init(data.photographers);
     }).catch(() => {
         console.error('error Api');
     });

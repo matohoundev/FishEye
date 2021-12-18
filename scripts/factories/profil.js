@@ -2,9 +2,11 @@ export default class Profil {
     profilHeader(data) {
         const { id, name, portrait, city, country, tagline } = data;
 
-        const picture = `assets/images/Photographers ID Photos/${portrait}`;
+        const picture = `../assets/images/Photographers ID Photos/${portrait}`;
 
         function getProfil() {
+            const photographersSection = document.querySelector('.banner-photographer');
+
             const divBannerInfo = document.createElement('div');
             divBannerInfo.setAttribute('class', 'banner-photographer__info');
 
@@ -17,7 +19,7 @@ export default class Profil {
 
             const location = document.createElement('p');
             location.setAttribute('class', 'card-photographer__location');
-            location.textContent = `${city},${country}`;
+            location.textContent = `${city}, ${country}`;
 
             const bio = document.createElement('p');
             bio.setAttribute('class', 'card-photographer__bio');
@@ -28,11 +30,14 @@ export default class Profil {
             img.setAttribute('alt', `photo du photographe ${name}`);
             img.setAttribute('class', 'banner-photographer__img');
 
+            photographersSection.appendChild(divBannerInfo);
+            photographersSection.appendChild(img);
             divBannerInfo.appendChild(divContainInfo);
+            divBannerInfo.after(img);
             divContainInfo.appendChild(h1);
             divContainInfo.appendChild(location);
             divContainInfo.appendChild(bio);
-            return {divBannerInfo, img};
+            return photographersSection;
         }
         return { id, name, picture, city, country, tagline, getProfil };
     }

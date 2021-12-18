@@ -2,7 +2,6 @@ import photographerFactory from '../factories/photographer.js';
 
 function getPhotographers(data) {
     const photographers = data;
-    
     return {
         photographers: [...photographers],
     };
@@ -20,6 +19,6 @@ async function displayData(photographers) {
 
 export default async function init(data) {
     // Récupère les datas des photographes
-    const { photographers } = await getPhotographers(data);
+    const { photographers } = getPhotographers(data);
     displayData(photographers);
 }
