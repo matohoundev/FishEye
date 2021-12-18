@@ -3,6 +3,11 @@
         "es2021": true,
         "node": true
     },
+    "globals": {
+        "document": true,
+        "fetch": true,
+        "window": true
+    },
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": 13,
@@ -19,7 +24,7 @@
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
