@@ -2,12 +2,18 @@
 import ApiServices from './getData/api.js';
 
 // Photographer Page
-import initProfil from './pages/photographers.js';
+import profil from './pages/photographers.js';
 
 (function appDispatch() {
     new ApiServices().getPhotographers().then((data) => {
-        initProfil(data.photographers);
+        profil.initProfil(data.photographers);
     }).catch(() => {
         console.error('error Api photographe');
+    });
+
+    new ApiServices().getMedia().then((data) => {
+        profil.initMedia(data.media);
+    }).catch(() => {
+        console.error('error Api media');
     });
 })();

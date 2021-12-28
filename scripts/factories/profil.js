@@ -1,8 +1,12 @@
 export default class Profil {
-    profilHeader(data) {
-        const { id, name, portrait, city, country, tagline } = data;
+    profilFactory(data) {
+        const { name, portrait, city, country, tagline, price, title, image, likes, date, video } = data;
+
+        // const firstname = name.replace(/ .*/,'');
 
         const picture = `../assets/images/Photographers ID Photos/${portrait}`;
+        // const photography = `../assets/images/${firstname}/${image}`;
+        // const audiovisual = `../assets/images/${firstname}/${video}`;
 
         function getProfil() {
             const photographersSection = document.querySelector('.banner-photographer');
@@ -39,6 +43,40 @@ export default class Profil {
             divContainInfo.appendChild(bio);
             return photographersSection;
         }
-        return { id, name, picture, city, country, tagline, getProfil };
+
+        function getMedia() {
+            const listPhotographer = document.querySelector('.list-photography');
+            
+            const a = document.createElement('a');
+            a.setAttribute('class', 'card-photography');
+            
+            // const img = document.createElement('img');
+            // img.setAttribute('src', photography);
+            // img.setAttribute('alt', title);
+            // img.setAttribute('class', 'card-photographer__img');
+
+            // const video = document.createElement('img');
+            // video.setAttribute('controls', 'controls');
+            // video.setAttribute('src', audiovisual);
+            // video.setAttribute('alt', title);
+            // video.setAttribute('class', 'card-photographer__img');
+
+            const div = document.createElement('div');
+
+            const pTitle = document.createElement('p');
+            pTitle.textContent = title;
+
+            const pLike = document.createElement('p');
+            pLike.textContent = likes;
+
+            listPhotographer.appendChild(a);
+            // a.appendChild(img);
+            // a.appendChild(video);
+            a.appendChild(div);
+            div.appendChild(pTitle);
+            div.appendChild(pLike);
+            return listPhotographer;
+        }
+        return { name, portrait, city, country, tagline, price, title, image, likes, date, video, getProfil, getMedia };
     }
 }
