@@ -1,4 +1,13 @@
 export default class ApiServices {
+
+    async getPhotographersAndMedias() {
+        let res = await fetch('../../data/photographers.json');
+        let data = await res.json();
+
+        const dataAll = data;
+
+        return { 'dataAll' : dataAll };
+    }
     
     async getPhotographers() {
         let res = await fetch('../../data/photographers.json');
@@ -6,15 +15,33 @@ export default class ApiServices {
  
         const dataPhotographers = [...data.photographers];
 
-        return { 'photographers' : dataPhotographers };
+        return dataPhotographers;
     }
 
-    async getMedia() {
+    async getMedias() {
         let res = await fetch('../../data/photographers.json');
         let data = await res.json();
 
-        const dataMedia = [...data.media];
+        const dataMedias = [...data.media];
 
-        return { 'media' : dataMedia };
+        return { 'medias' : dataMedias };
+    }
+
+    async getPhotographerById(id) {
+        let res = await fetch('../../data/photographers.json');
+        let data = await res.json();
+ 
+        const [photographer] = [...data.photographers.filter(photographer => photographer.id == id)];
+
+        return photographer;
+    }
+    
+    async getMediaById(id) {
+        let res = await fetch('../../data/photographers.json');
+        let data = await res.json();
+
+        const dataMedia = [...data.media.filter(profil => profil.photographerId == id)];
+
+        return dataMedia;
     }
 }

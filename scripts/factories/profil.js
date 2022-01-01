@@ -2,11 +2,7 @@ export default class Profil {
     profilFactory(data) {
         const { name, portrait, city, country, tagline, price, title, image, likes, date, video } = data;
 
-        // const firstname = name.replace(/ .*/,'');
-
         const picture = `../assets/images/Photographers ID Photos/${portrait}`;
-        // const photography = `../assets/images/${firstname}/${image}`;
-        // const audiovisual = `../assets/images/${firstname}/${video}`;
 
         function getProfil() {
             const photographersSection = document.querySelector('.banner-photographer');
@@ -44,22 +40,33 @@ export default class Profil {
             return photographersSection;
         }
 
-        function getMedia() {
+        function getMedia(name) {
+            let firstname = name.split(' ')[0];
+            firstname = firstname.replace('-',' ');
             const listPhotographer = document.querySelector('.list-photography');
             
+            const li = document.createElement('li');
+
             const a = document.createElement('a');
             a.setAttribute('class', 'card-photography');
-            
-            // const img = document.createElement('img');
-            // img.setAttribute('src', photography);
-            // img.setAttribute('alt', title);
-            // img.setAttribute('class', 'card-photographer__img');
 
-            // const video = document.createElement('img');
-            // video.setAttribute('controls', 'controls');
-            // video.setAttribute('src', audiovisual);
-            // video.setAttribute('alt', title);
-            // video.setAttribute('class', 'card-photographer__img');
+            if (image) {
+                const photography = `../assets/images/${firstname}/${image}`;    
+                const img = document.createElement('img');
+                img.setAttribute('src', photography);
+                img.setAttribute('alt', title);
+                img.setAttribute('class', 'card-photography__img');
+                a.appendChild(img);   
+            } else {
+                const audiovisual = `../assets/images/${firstname}/${video}`;
+                const visual = document.createElement('video');
+                visual.setAttribute('controls', 'controls');
+                visual.setAttribute('src', audiovisual);
+                visual.setAttribute('alt', title);
+                visual.setAttribute('role', 'button');
+                visual.setAttribute('class', 'card-photography__img');
+                a.appendChild(visual);
+            }
 
             const div = document.createElement('div');
 
@@ -69,9 +76,8 @@ export default class Profil {
             const pLike = document.createElement('p');
             pLike.textContent = likes;
 
-            listPhotographer.appendChild(a);
-            // a.appendChild(img);
-            // a.appendChild(video);
+            listPhotographer.appendChild(li);
+            li.appendChild(a);
             a.appendChild(div);
             div.appendChild(pTitle);
             div.appendChild(pLike);

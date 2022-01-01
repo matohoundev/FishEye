@@ -1,13 +1,8 @@
+import ApiServices from '../getData/api.js';
+
 import photographerFactory from '../factories/photographer.js';
 
-function getPhotographers(data) {
-    const photographers = data;
-    return {
-        photographers: [...photographers],
-    };
-}
-
-async function displayData(photographers) {
+function displayData(photographers) {
     const photographersSection = document.querySelector('.all-photographers');
 
     photographers.forEach((photographer) => {
@@ -17,8 +12,11 @@ async function displayData(photographers) {
     });
 }
 
-export default async function init(data) {
+(function init() {
     // Récupère les datas des photographes
-    const { photographers } = getPhotographers(data);
-    displayData(photographers);
-}
+    new ApiServices().getPhotographers().then((data) => {
+        displayData(data);
+    }).catch(() => {
+        console.log('error Api');
+    });
+})();

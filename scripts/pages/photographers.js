@@ -1,4 +1,5 @@
-//Mettre le code JavaScript lié à la page photographer.html
+import ApiServices from '../getData/api.js';
+
 import Profil from '../factories/profil.js';
 
 function path() {
@@ -9,50 +10,35 @@ function path() {
     return id;
 }
 
-// récupère toute les données du photographe
-class photographer {
-    getProfil(id, data) {
-        // on récupère le bon profil en fonction de l'id inscrit dans l'url
-        const [ photographer ] = data.filter(profil => profil.id == id);
-    
-        return photographer;
-    }
-    getMedia(id, data) {
-        const media  = data.filter(profil => profil.photographerId == id);
-        
-        return media;
-    }
-}
-
 // envoie toutes données pour les afficher
-class displayServices {
-    displayProfil(profil) {
-        // on créé un profil avec les data reçu
-        const photographerModel = new Profil().profilFactory(profil);
-        photographerModel.getProfil();
-    }
-    displayMedia(medias) {
-        // on envoie les média en fonction du profil reçu
-        medias.forEach((media) => {
-            console.log(media);
-            const photographerModel = new Profil().profilFactory(media);
-            photographerModel.getMedia();         
-        });
-    }
+function displayProfil(profil) {
+    // on créé un profil avec les data reçu
+    const photographerModel = new Profil().profilFactory(profil);
+    photographerModel.getProfil();
+}
+function displayMedia(photographerName, medias) {
+    // on envoie les média en fonction du profil reçu
+    medias.forEach((media) => {
+        const photographerModel = new Profil().profilFactory(media);
+        photographerModel.getMedia(photographerName);         
+    });
 }
 
-const initProfil = async (data) => {
-    // Récupère les data d'un photographe
-    const id = await path();
-    const profil = await new photographer().getProfil(id, data);
-    new displayServices().displayProfil(profil);
-};
+(function init() {
+    const id = path();
+    new ApiServices().getPhotographerById(id).then((data) => {
+        displayProfil(data);
+    }).catch(() => {
+        console.log('error Api photographersbyId');
+    });
 
-const initMedia = async (data) => {
-    // Récupère les data d'un photographe
-    const id = await path();
-    const medias = await new photographer().getMedia(id, data);
-    new displayServices().displayMedia(medias);
-};
+    const media = new ApiServices().getMediaById(id);
+    const photographer = new ApiServices().getPhotographerById(id);
 
-export default {initProfil, initMedia};
+    Promise.all([photographer, media]).then(([photographer, media]) => {
+        displayMedia(photographer.name, media);
+    }).catch(() => {
+        console.log('error Api photographersbyId and media');
+    });
+
+})();
