@@ -1,32 +1,40 @@
 .card-photography {
+  height: 30vh;
+  max-height: 400px;
+  // max-width: 370px;
+  // border: 1px solid blue;
+  margin-bottom: 30px;
+  @media all and (min-width: $xsm) {
+    width: 45vw;
+    max-width: 350px;
+  }
+  @media all and (min-width: $sm) {
+    // height: 100%;
+    // border: 1px solid red;
+  }
   &__img {
     width: 100%;
-    max-width: 370px;
-    height: 25vh;
-    max-height: 500px;
+    height: 90%;
     object-fit: cover;
     object-position: 0 -50px;
-    border-radius: $curler;
-    @media all and (min-width: $xsm) {
-      width: 45vw;
-      max-width: 350px;
-    }
-    @media all and (min-width: $sm) {
-      height: 300px;
-    }
+    // border-radius: $curler;
+    // border: 1px solid peru;
   }
   div {
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: $main-color;
-    height: 3vh;
-    max-width: 370px;
-    min-height: 10px;
-    max-height: 30px;
-    margin-bottom: 5px;
-    .fa-heart {
-      font-size: 14px;
+    // border: 1px solid green;
+    .content-like {
+      width: 13%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .fa-heart {
+        // border: 1px solid yellow;
+      }
     }
   }
 }

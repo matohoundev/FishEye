@@ -16,29 +16,30 @@ function displayProfil(profil) {
     const photographerModel = new Profil().profilFactory(profil);
     photographerModel.getProfil();
 }
+// on envoie les média en fonction du profil reçu
 function displayMedia(photographerName, medias) {
-    // on envoie les média en fonction du profil reçu
     medias.forEach((media) => {
         const photographerModel = new Profil().profilFactory(media);
         photographerModel.getMedia(photographerName);         
     });
 }
+// on envoie les likes et le prix en fonction du profil reçu
+function displayRank(profil,  likes) {
+    const photographerModel = new Profil().profilFactory(profil);
+    photographerModel.getRank(likes);       
+}
 
 (function init() {
     const id = path();
-    new ApiServices().getPhotographerById(id).then((data) => {
-        displayProfil(data);
-    }).catch(() => {
-        console.log('error Api photographersbyId');
-    });
-
-    const media = new ApiServices().getMediaById(id);
     const photographer = new ApiServices().getPhotographerById(id);
+    const mediaPhotographer = new ApiServices().getMediaById(id);
+    const likes = new ApiServices().getLikesById(id);
 
-    Promise.all([photographer, media]).then(([photographer, media]) => {
+    Promise.all([photographer, mediaPhotographer, likes]).then(([photographer, media, likes]) => {
+        displayProfil(photographer);
         displayMedia(photographer.name, media);
+        displayRank(photographer, likes);
     }).catch(() => {
         console.log('error Api photographersbyId and media');
     });
-
 })();

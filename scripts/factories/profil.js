@@ -13,6 +13,13 @@ export default class Profil {
             const divContainInfo = document.createElement('div');
             divContainInfo.setAttribute('class', 'contain__info');
 
+            const divPhotographerBtn = document.createElement('div');
+            divPhotographerBtn.setAttribute('class', 'photographer-btn');
+
+            const btnContact = document.createElement('button');
+            btnContact.setAttribute('id', 'btn-contact');
+            btnContact.textContent = 'Contactez-moi';
+
             const h1 = document.createElement('h1');
             h1.setAttribute('class', 'card-photographer__name');
             h1.textContent = name;
@@ -33,6 +40,8 @@ export default class Profil {
             photographersSection.appendChild(divBannerInfo);
             photographersSection.appendChild(img);
             divBannerInfo.appendChild(divContainInfo);
+            divBannerInfo.appendChild(divPhotographerBtn);
+            divPhotographerBtn.appendChild(btnContact);
             divBannerInfo.after(img);
             divContainInfo.appendChild(h1);
             divContainInfo.appendChild(location);
@@ -47,8 +56,10 @@ export default class Profil {
             
             const li = document.createElement('li');
 
+            const article = document.createElement('article');
+            article.setAttribute('class', 'card-photography');
+
             const a = document.createElement('a');
-            a.setAttribute('class', 'card-photography');
 
             if (image) {
                 const photography = `../assets/images/${firstname}/${image}`;    
@@ -74,15 +85,41 @@ export default class Profil {
             pTitle.textContent = title;
 
             const pLike = document.createElement('p');
+            pLike.setAttribute('class', 'content-like');
             pLike.textContent = likes;
 
+            const heart = document.createElement('i');
+            heart.setAttribute('class', 'fas fa-heart');
+
             listPhotographer.appendChild(li);
-            li.appendChild(a);
+            li.appendChild(article);
+            article.appendChild(a);
             a.appendChild(div);
             div.appendChild(pTitle);
             div.appendChild(pLike);
+            pLike.appendChild(heart);
             return listPhotographer;
         }
-        return { name, portrait, city, country, tagline, price, title, image, likes, date, video, getProfil, getMedia };
+        function getRank(likes) {
+            const rank = document.querySelector('.rank');
+
+            const div = document.createElement('div');
+
+            const pLikes = document.createElement('p');
+            pLikes.textContent = likes;
+            
+            const heart = document.createElement('i');
+            heart.setAttribute('class', 'fas fa-heart');
+
+            const pPrice = document.createElement('p');
+            pPrice.textContent = `${price} / jour €`;
+
+            rank.appendChild(div);
+            div.appendChild(pLikes);
+            div.appendChild(heart);
+            rank.appendChild(pPrice);
+            return rank;
+        }
+        return { name, portrait, city, country, tagline, price, title, image, likes, date, video, getProfil, getMedia, getRank };
     }
 }

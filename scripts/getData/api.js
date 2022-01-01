@@ -44,4 +44,18 @@ export default class ApiServices {
 
         return dataMedia;
     }
+
+    async getLikesById(id) {
+        let res = await fetch('../../data/photographers.json');
+        let data = await res.json();
+        let likes = 0;
+
+        const dataMedia = [...data.media.filter(profil => profil.photographerId == id)];
+
+        dataMedia.forEach((media) => {
+            likes = likes + media.likes;
+        });
+
+        return likes;
+    }
 }
