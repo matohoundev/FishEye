@@ -1,6 +1,7 @@
 import ApiServices from '../getData/api.js';
 
 import Profil from '../factories/profil.js';
+import Form from '../form/form.js';
 
 function path() {
     // on check l'url pour trouver l'id
@@ -15,6 +16,7 @@ function displayProfil(profil) {
     // on créé un profil avec les data reçu
     const photographerModel = new Profil().profilFactory(profil);
     photographerModel.getProfil();
+    new Form().init();
 }
 // on envoie les média en fonction du profil reçu
 function displayMedia(photographerName, medias) {
@@ -40,6 +42,6 @@ function displayRank(profil,  likes) {
         displayMedia(photographer.name, media);
         displayRank(photographer, likes);
     }).catch(() => {
-        console.log('error Api photographersbyId and media');
+        console.log('error Api');
     });
 })();

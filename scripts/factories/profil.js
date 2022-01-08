@@ -13,9 +13,6 @@ export default class Profil {
             const divContainInfo = document.createElement('div');
             divContainInfo.setAttribute('class', 'contain__info');
 
-            const divPhotographerBtn = document.createElement('div');
-            divPhotographerBtn.setAttribute('class', 'photographer-btn');
-
             const btnContact = document.createElement('button');
             btnContact.setAttribute('id', 'btn-contact');
             btnContact.textContent = 'Contactez-moi';
@@ -40,8 +37,7 @@ export default class Profil {
             photographersSection.appendChild(divBannerInfo);
             photographersSection.appendChild(img);
             divBannerInfo.appendChild(divContainInfo);
-            divBannerInfo.appendChild(divPhotographerBtn);
-            divPhotographerBtn.appendChild(btnContact);
+            divBannerInfo.appendChild(btnContact);
             divBannerInfo.after(img);
             divContainInfo.appendChild(h1);
             divContainInfo.appendChild(location);

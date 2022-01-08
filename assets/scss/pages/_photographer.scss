@@ -19,15 +19,6 @@
         color: $color-grey;
       }
     }
-    .photographer-btn {
-      position: fixed;
-      bottom: 20px;
-      left: 25vw;
-      z-index: 2;
-      @media all and (min-width: $md) {
-        position: static;
-      }
-    }
   }
   &__img {
     width: 110px;

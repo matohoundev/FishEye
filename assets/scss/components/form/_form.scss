@@ -45,6 +45,12 @@
         textarea {
           border: none;
           border-radius: $curler;
+          &[data-error="true"] {
+            border: 1px solid green;
+          }
+          &[data-error="false"] {
+            border: 1px solid red;
+          }
         }
         input {
           height: 4vh;
