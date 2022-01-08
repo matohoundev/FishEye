@@ -1,6 +1,6 @@
 import ApiServices from '../getData/api.js';
 
-import Profil from '../factories/profil.js';
+import profilFactory from '../factories/profil.js';
 import Form from '../form/form.js';
 
 function path() {
@@ -14,20 +14,20 @@ function path() {
 // envoie toutes données pour les afficher
 function displayProfil(profil) {
     // on créé un profil avec les data reçu
-    const photographerModel = new Profil().profilFactory(profil);
+    const photographerModel = profilFactory(profil);
     photographerModel.getProfil();
     new Form().init();
 }
 // on envoie les média en fonction du profil reçu
 function displayMedia(photographerName, medias) {
     medias.forEach((media) => {
-        const photographerModel = new Profil().profilFactory(media);
+        const photographerModel = profilFactory(media);
         photographerModel.getMedia(photographerName);         
     });
 }
 // on envoie les likes et le prix en fonction du profil reçu
 function displayRank(profil,  likes) {
-    const photographerModel = new Profil().profilFactory(profil);
+    const photographerModel = profilFactory(profil);
     photographerModel.getRank(likes);       
 }
 
