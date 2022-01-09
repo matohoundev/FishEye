@@ -37,6 +37,7 @@ function displayRank(profil,  likes) {
     const mediaPhotographer = new ApiServices().getMediaById(id);
     const likes = new ApiServices().getLikesById(id);
 
+    // on dispatch toutes les données
     Promise.all([photographer, mediaPhotographer, likes]).then(([photographer, media, likes]) => {
         displayProfil(photographer);
         displayMedia(photographer.name, media);

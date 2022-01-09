@@ -35,6 +35,9 @@
 
 .filters {
   display: none;
+  height: 70px;
+  position: relative;
+  border: 1px solid blue;
   .sort-by {
     padding-top: 22px;
   }

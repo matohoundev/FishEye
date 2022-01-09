@@ -3,7 +3,9 @@
   height: 100%;
   border-radius: $curler;
   background-color: $main-color;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+  transition: height 0.2s ease-in-out;
 }
 .btn-top {
   padding: 20px;
@@ -22,8 +24,9 @@
   width: 20px;
 }
 .bloc-links {
-  transition: height 0.2s ease-in-out;
-  height: 0;
+  transition: opacity 0.2s ease-in-out;
+  // height: 0;
+  opacity: 0;
   padding: 0 10px;
 }
 .bloc-links li {
