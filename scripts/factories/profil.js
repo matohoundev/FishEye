@@ -1,5 +1,5 @@
 export default function profilFactory(data) {
-    const { name, portrait, city, country, tagline, price, title, image, likes, date, video } = data;
+    const { id, name, portrait, city, country, tagline, price, title, image, likes, date, video } = data;
 
     const picture = `../assets/images/Photographers ID Photos/${portrait}`;
 
@@ -49,9 +49,7 @@ export default function profilFactory(data) {
 
     function getMedia(name) {
         let firstname = name.split(' ')[0];
-        firstname = firstname.replace('-',' ');
-        const listPhotographer = document.querySelector('.list-photography');
-            
+        firstname = firstname.replace('-',' ');     
         const li = document.createElement('li');
 
         const article = document.createElement('article');
@@ -82,21 +80,24 @@ export default function profilFactory(data) {
         const pTitle = document.createElement('p');
         pTitle.textContent = title;
 
+        const divLike = document.createElement('div');
+        divLike.setAttribute('class', 'content-like');
+
         const pLike = document.createElement('p');
-        pLike.setAttribute('class', 'content-like');
         pLike.textContent = likes;
 
         const heart = document.createElement('i');
-        heart.setAttribute('class', 'fas fa-heart');
+        heart.setAttribute('class', 'far fa-heart');
+        heart.setAttribute('data-value', likes);
 
-        listPhotographer.appendChild(li);
         li.appendChild(article);
         article.appendChild(a);
         a.appendChild(div);
         div.appendChild(pTitle);
-        div.appendChild(pLike);
-        pLike.appendChild(heart);
-        return listPhotographer;
+        div.appendChild(divLike);
+        divLike.appendChild(pLike);
+        divLike.appendChild(heart);
+        return li;
     }
     function getRank(likes) {
         const rank = document.querySelector('.rank');
@@ -104,6 +105,7 @@ export default function profilFactory(data) {
         const div = document.createElement('div');
 
         const pLikes = document.createElement('p');
+        pLikes.setAttribute('id', 'all-likes');
         pLikes.textContent = likes;
             
         const heart = document.createElement('i');
@@ -118,5 +120,5 @@ export default function profilFactory(data) {
         rank.appendChild(pPrice);
         return rank;
     }
-    return { name, portrait, city, country, tagline, price, title, image, likes, date, video, getProfil, getMedia, getRank };
+    return { id, name, portrait, city, country, tagline, price, title, image, likes, date, video, getProfil, getMedia, getRank };
 }

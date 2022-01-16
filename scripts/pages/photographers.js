@@ -2,6 +2,7 @@ import ApiServices from '../getData/api.js';
 
 import profilFactory from '../factories/profil.js';
 import Form from '../form/form.js';
+import Likes from '../likes/likes.js';
 
 function path() {
     // on check l'url pour trouver l'id
@@ -20,9 +21,15 @@ function displayProfil(profil) {
 }
 // on envoie les média en fonction du profil reçu
 function displayMedia(photographerName, medias) {
+    const listPhotographer = document.querySelector('.list-photography');
+
     medias.forEach((media) => {
         const photographerModel = profilFactory(media);
-        photographerModel.getMedia(photographerName);         
+        const userCardMediaDOM = photographerModel.getMedia(photographerName);
+        listPhotographer.appendChild(userCardMediaDOM).addEventListener('click', (e) => {
+            Likes(e);
+        });
+        // new Likes().init(media.likes);        
     });
 }
 // on envoie les likes et le prix en fonction du profil reçu
