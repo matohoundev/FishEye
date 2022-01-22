@@ -11,7 +11,6 @@ function path() {
     const id = urlParams.get('id');
     return id;
 }
-
 // envoie toutes données pour les afficher
 function displayProfil(profil) {
     // on créé un profil avec les data reçu
