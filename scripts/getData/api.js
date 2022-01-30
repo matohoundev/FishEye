@@ -47,6 +47,13 @@ export default class ApiServices {
         return dataMedia;
     }
 
+    async getMediaByIdAndSort(medias) {
+
+        const dataSort = [medias.sort(media => media.likes - media.likes)];
+
+        return dataSort;
+    }
+
     async getLikesById(id) {
         let res = await fetch(this.URL);
         let data = await res.json();

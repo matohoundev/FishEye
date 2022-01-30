@@ -4,7 +4,8 @@ export default function profilFactory(data) {
     const picture = `../assets/images/Photographers ID Photos/${portrait}`;
 
     function getProfil() {
-        const photographersSection = document.querySelector('.banner-photographer');
+        const BannerProfil = document.createElement('div');
+        BannerProfil.setAttribute('class', 'banner-photographer');
 
         const divBannerInfo = document.createElement('div');
         divBannerInfo.setAttribute('class', 'banner-photographer__info');
@@ -36,15 +37,15 @@ export default function profilFactory(data) {
         img.setAttribute('alt', `photo du photographe ${name}`);
         img.setAttribute('class', 'banner-photographer__img');
 
-        photographersSection.appendChild(divBannerInfo);
-        photographersSection.appendChild(img);
+        BannerProfil.appendChild(divBannerInfo);
+        BannerProfil.appendChild(img);
         divBannerInfo.appendChild(divContainInfo);
         divBannerInfo.appendChild(btnContact);
         divBannerInfo.after(img);
         divContainInfo.appendChild(h1);
         divContainInfo.appendChild(location);
         divContainInfo.appendChild(bio);
-        return photographersSection;
+        return BannerProfil;
     }
 
     function getMedia(name) {

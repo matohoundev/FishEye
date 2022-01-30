@@ -1,6 +1,7 @@
 .banner-photographer {
   display: flex;
   justify-content: space-between;
+  padding-inline: 2%;
   @media all and (min-width: $md) {
     background-color: $color-lightgrey;
     border-radius: $curler;
@@ -33,7 +34,7 @@
   }
 }
 
-.filters {
+.Sort {
   display: none;
   height: 70px;
   position: relative;

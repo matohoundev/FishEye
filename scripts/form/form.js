@@ -1,3 +1,5 @@
+let modal = document.querySelector('.content-form-modal');
+
 export default class Form {
     init() {
         let contact = document.querySelector('#btn-contact');
@@ -28,14 +30,11 @@ export default class Form {
         });
 
     }
-    
     displayModal() {
-        let modal = document.querySelector('.content-form-modal');
         modal.style.display = 'flex';
     }
     
     closeModal() {
-        let modal = document.querySelector('.content-form-modal');
         modal.style.display = 'none';
     }
 
