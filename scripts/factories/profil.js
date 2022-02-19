@@ -15,13 +15,14 @@ export default function profilFactory(data) {
 
         const btnContact = document.createElement('button');
         btnContact.setAttribute('id', 'btn-contact');
+        btnContact.setAttribute('title', 'Contact Me');
         btnContact.textContent = 'Contactez-moi';
 
         const h1 = document.createElement('h1');
         h1.setAttribute('class', 'card-photographer__name');
         h1.textContent = name;
 
-        const formName = document.querySelector('.form-modal__head h1');
+        const formName = document.querySelector('#form-title');
         formName.textContent = `Contactez-moi ${name}`;
 
         const location = document.createElement('p');
@@ -72,7 +73,7 @@ export default function profilFactory(data) {
             visual.setAttribute('src', audiovisual);
             visual.setAttribute('alt', title);
             visual.setAttribute('role', 'button');
-            visual.setAttribute('class', 'card-photography__img');
+            visual.setAttribute('class', 'card-photography__video');
             a.appendChild(visual);
         }
 
@@ -90,6 +91,7 @@ export default function profilFactory(data) {
         const heart = document.createElement('i');
         heart.setAttribute('class', 'far fa-heart');
         heart.setAttribute('data-value', likes);
+        heart.setAttribute('alt', 'likes');
 
         li.appendChild(article);
         article.appendChild(a);

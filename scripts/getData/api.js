@@ -47,11 +47,26 @@ export default class ApiServices {
         return dataMedia;
     }
 
-    async getMediaByIdAndSort(medias) {
-
-        const dataSort = [medias.sort(media => media.likes - media.likes)];
-
-        return dataSort;
+    async getMediaSortByType(medias, typeSort) {
+        const dataSortByPopularity = [...medias].sort((media1, media2) => media2.likes - media1.likes);
+        const dataSortByDate = [...medias].sort((media1, media2) => new Date(media2.date).valueOf() - new Date(media1.date).valueOf());
+        const dataSortByTitle = [...medias].sort((media1, media2) => { 
+            if (media1.title.toLowerCase() < media2.title.toLowerCase()) {
+                return -1;
+            } else if (media1.title.toLowerCase() > media2.title.toLowerCase()) {
+                return 1;
+            }
+        });
+        switch (typeSort) {
+        case 'sort-popularity':
+            return dataSortByPopularity;
+        case 'sort-date':
+            return dataSortByDate;
+        case 'sort-title':
+            return dataSortByTitle;
+        default:
+            return dataSortByPopularity;
+        }
     }
 
     async getLikesById(id) {

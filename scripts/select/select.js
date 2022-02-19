@@ -23,12 +23,11 @@ export default class select {
     }
 
     sortChoose(e) {
-        // console.log(liItems);
-        // let sort = ['Popularité', 'Date', 'Titre'];
-        if (e.target.innerHTML == 'Popularité' || e.target.innerHTML == 'Date' || e.target.innerHTML == 'Titre') {
-            // console.log(e.target.innerHTML);
-            // console.log('yes');
-            return e.target.innerHTML;
+        switch (e.target.id) {
+        case 'sort-popularity':
+        case 'sort-date':
+        case 'sort-title':
+            return e.target.id;
         }
     }
     

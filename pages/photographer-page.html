@@ -16,7 +16,7 @@
   <body>
     <header class="header-photographer">
       <a href="../../index.html">
-        <img src="../assets/logo/logo.svg" alt="logo FishEye" class="logo" />
+        <img src="../assets/logo/logo.svg" alt="Fisheye Home page" class="logo" />
       </a>
     </header>
 
@@ -29,11 +29,12 @@
 
       <div class="sort-select">
         <button
+          role="button"
           class="btn-top"
-          aria-haspopup="sort-select"
-          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-expanded="true"
         >
-          <span id="sort-popularity">Popularité</span>
+          <span id="sort-popularity" role='listbox'>Popularité</span>
           <svg
             fill="#f1f1f1"
             xmlns="http://www.w3.org/2000/svg"
@@ -54,10 +55,10 @@
         <div class="bloc-links">
           <ul>
             <li>
-              <a id="sort-date">Date</a>
+              <a id="sort-date" role='listbox'>Date</a>
             </li>
             <li>
-              <a id="sort-title">Titre</a>
+              <a id="sort-title" role='listbox'>Titre</a>
             </li>
           </ul>
         </div>
@@ -70,66 +71,71 @@
       </ul>
     </main>
 
-    <div class="lightbox-modal">
+    <div class="lightbox-modal" aria-label="image closeup view" aria-hidden="true">
       <div class="lightbox-modal-content">
         <div class="lightbox-modal-content__left">
-          <i class="fas fa-chevron-left"></i>
+          <i class="fas fa-chevron-left" role="button" title="Previous image"></i>
         </div>
         <div class="lightbox-modal-content__img">
-          <img src="../assets/images/Mimi/Animals_Rainbow.jpg" alt="" />
-          <p>Arc-en-ciel</p>
+          <img class="lightbox-modal-img" src="" alt="" />
+          <video class="lightbox-modal-video" src="" alt=""></video>
+          <p class="lightbox-modal-text"></p>
         </div>
         <div class="lightbox-modal-content__right">
-          <i class="fas fa-times"></i>
-          <i class="fas fa-chevron-right"></i>
+          <i class="fas fa-times btn-close-picture" role="button" title="Close dialog"></i>
+          <i class="fas fa-chevron-right" role="button" title="Next image"></i>
         </div>
       </div>
     </div>
 
-    <div class="content-form-modal">
+    <div class="content-form-modal" role="dialog" id="form-dialog" aria-label="form contact" aria-labelledby="form-title">
       <div class="form-modal">
-        <div class="form-modal__head">
-          <h1></h1>
-          <i class="fas fa-times fa-times--clear close-contact"></i>
+        <div class="form-modal__head" aria-label="contact form header">
+          <h1 id="form-title"></h1>
+          <i  type="button" title="Close Contact form" class="fas fa-times fa-times--clear close-contact"></i>
         </div>
         <form id="contact" name="contact" action="photographer-page.html" method="POST">
           <div class="formData">
-            <label for="firstname">Prénom</label>
+            <label id="label-firstname" for="firstname">Prénom</label>
             <input
               id="firstname"
               type="text"
               class="text-control"
               name="firstname"
+              aria-labelledby="label-firstname"
             />
           </div>
           <div class="formData">
-            <label for="lastname">Nom</label>
+            <label id="label-lastname" for="lastname">Nom</label>
             <input
               id="lastname"
               type="text"
               class="text-control"
               name="lastname"
+              aria-labelledby="label-lastname"
             />
           </div>
           <div class="formData">
-            <label for="email">Email</label>
+            <label id="label-email" for="email">Email</label>
             <input
               id="email"
               type="text"
               class="text-control"
               name="email"
+              aria-labelledby="label-email"
             />
           </div>
           <div class="formData">
-            <label for="message">Votre message</label>
+            <label id="label-message" for="message">Votre message</label>
             <textarea
               name="message"
               id="message"
               cols="30"
               rows="10"
+              aria-labelledby="label-message"
             ></textarea>
           </div>
-          <input class="btn-submit" type="submit" class="btn" value="Envoyer" />
+          <input class="btn-submit" type="submit" class="btn" value="Envoyer" title="Send"/>
         </form>
       </div>
     </div>

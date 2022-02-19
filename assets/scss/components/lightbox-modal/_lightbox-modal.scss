@@ -1,57 +1,69 @@
 .lightbox-modal {
   display: none;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
 
-  // width: 100vw;
-  // height: 100vh;
-  // z-index: 3;
-  // background-color: $clear;
-  // color: $main-color;
-  // @media all and (min-width: $sm) {
-  //   width: 100vw;
-  //   height: 100vh;
-  // }
-  // &-content {
-  //   height: min-content;
-  //   display: flex;
-  //   &__left {
-  //     padding-right: 2%;
-  //     display: flex;
-  //     align-items: center;
-  //   }
-  //   &__img {
-  //     display: flex;
-  //     flex-direction: column;
-  //     img {
-  //       width: 289px;
-  //       height: 248px;
-  //       object-fit: cover;
-  //       border-radius: $curler;
-  //       @media all and (min-width: $sm) {
-  //         width: 47vw;
-  //         height: 90vh;
-  //         max-width: 1050px;
-  //         max-height: 900px;
-  //       }
-  //     }
-  //     p {
-  //       padding-top: 2%;
-  //       font-size: 1.3rem;
-  //     }
-  //   }
-  //   &__right {
-  //     display: grid;
-  //     flex-direction: column;
-  //     justify-content: space-between;
-  //     padding-left: 2%;
-  //     .fa-chevron-right {
-  //       padding-bottom: 120%;
-  //     }
-  //   }
-  // }
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  background-color: $color-clear;
+  color: $main-color;
+  @media all and (min-width: $sm) {
+    width: 100vw;
+    height: 100vh;
+  }
+  &-content {
+    height: min-content;
+    display: flex;
+    &__left {
+      padding-right: 2%;
+      display: flex;
+      align-items: center;
+    }
+    &__img {
+      flex-direction: column;
+      .lightbox-modal-img {
+        display: none;
+        width: 289px;
+        height: 248px;
+        object-fit: cover;
+        border-radius: $curler;
+        @media all and (min-width: $sm) {
+          width: 47vw;
+          height: 90vh;
+          max-width: 1050px;
+          max-height: 900px;
+        }
+      }
+      .lightbox-modal-video {
+        display: none;
+        width: 289px;
+        height: 248px;
+        object-fit: cover;
+        border-radius: $curler;
+        @media all and (min-width: $sm) {
+          width: 47vw;
+          height: 90vh;
+          max-width: 1050px;
+          max-height: 900px;
+        }
+      }
+      p {
+        padding-top: 2%;
+        font-size: 1.3rem;
+      }
+    }
+    &__right {
+      display: grid;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 2%;
+      .fa-chevron-right {
+        padding-bottom: 120%;
+      }
+    }
+  }
 }

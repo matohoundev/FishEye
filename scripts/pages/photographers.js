@@ -4,6 +4,7 @@ import profilFactory from '../factories/profil.js';
 import Form from '../form/form.js';
 import Likes from '../likes/likes.js';
 import select from '../select/select.js';
+import modalPictures from '../modalPictures/modalPictures.js';
 
 function path() {
     // on check l'url pour trouver l'id
@@ -24,30 +25,29 @@ function displayProfil(profil) {
 // on envoie les média en fonction du profil reçu
 function displayMedia(photographerName, medias) {
     const listPhotographer = document.querySelector('.list-photography');
-    // const sort = document.querySelector('.Sort');
+    const sort = document.querySelector('.Sort');
 
-    // sort.addEventListener('click', (e) => {
-    //     new select().toggleDropDown();
-    //     new select().sortChoose(e);
-    //     console.log( new select().sortChoose(e));
-    //     let newMedias = new ApiServices().getMediaByIdAndSort(medias);
-    //     newMedias.forEach((media) => {
-    //         const photographerModel = profilFactory(media);
-    //         const userCardMediaDOM = photographerModel.getMedia(photographerName);
-    //         listPhotographer.appendChild(userCardMediaDOM).addEventListener('click', (e) => {
-    //             Likes(e);
-    //         });   
-    //     });
-    // });
-
-    let test = medias.sort(media => media.likes > media.likes);
-    console.log(test);
+    sort.addEventListener('click', (e) => {
+        new select().toggleDropDown();
+        let sortChoice = new select().sortChoose(e);
+        new ApiServices().getMediaSortByType(medias, sortChoice).then(mediaSorted => {
+            listPhotographer.replaceChildren();
+            mediaSorted.forEach((media) => {
+                const photographerModel = profilFactory(media);
+                const userCardMediaDOM = photographerModel.getMedia(photographerName);
+                listPhotographer.appendChild(userCardMediaDOM).addEventListener('click', (e) => {
+                    Likes(e);
+                });   
+            });
+        });
+    });
 
     medias.forEach((media) => {
         const photographerModel = profilFactory(media);
         const userCardMediaDOM = photographerModel.getMedia(photographerName);
         listPhotographer.appendChild(userCardMediaDOM).addEventListener('click', (e) => {
             Likes(e);
+            new modalPictures().init(medias, media, photographerName, e);
         });   
     });
 }
@@ -73,8 +73,3 @@ function displayRank(profil,  likes) {
         console.log('error Api');
     });
 })();
-
-// trois méthodes pour le tri
-// 1 - des l'init remplacer media par sort si click
-// 2 - dans displayMedia filtrer si click
-// 3 - écraser display Media avec un displaySortMedia
