@@ -2,8 +2,8 @@ let lightboxModal = document.querySelector('.lightbox-modal');
 let img = document.querySelector('.lightbox-modal-img');
 let video = document.querySelector('.lightbox-modal-video');
 let imgText = document.querySelector('.lightbox-modal-text');
-let btnNext = document.querySelector('.fa-chevron-right');
-let btnPrevious = document.querySelector('.fa-chevron-left');
+let btnNext = document.querySelector('.btn-next-picture');
+let btnPrevious = document.querySelector('.btn-previous-picture');
 
 export default class modalPictures {
     init(medias, clickedMedia, namePhotographe, e) {

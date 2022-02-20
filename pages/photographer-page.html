@@ -28,37 +28,39 @@
       <p class="sort-by">Trier par</p>
 
       <div class="sort-select">
-        <button
-          role="button"
-          class="btn-top"
-          aria-haspopup="listbox"
-          aria-expanded="true"
-        >
-          <span id="sort-popularity" role='listbox'>Popularité</span>
-          <svg
-            fill="#f1f1f1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1"
-            id="Layer_1"
-            x="0px"
-            y="0px"
-            viewBox="0 0 407.437 407.437"
-            style="enable-background: new 0 0 407.437 407.437"
-            xml:space="preserve"
+        <a href="#">
+          <button
+            role="button"
+            class="btn-top"
+            aria-haspopup="listbox"
+            aria-expanded="true"
           >
-            <polygon
-              points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "
-            />
-          </svg>
-        </button>
+            <span id="sort-popularity" role='listbox'>Popularité</span>
+            <svg
+              fill="#f1f1f1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              id="Layer_1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 407.437 407.437"
+              style="enable-background: new 0 0 407.437 407.437"
+              xml:space="preserve"
+            >
+              <polygon
+                points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "
+              />
+            </svg>
+          </button>
+        </a>
         <div class="bloc-links">
           <ul>
             <li>
-              <a id="sort-date" role='listbox'>Date</a>
+              <a href="#" id="sort-date" role='listbox'>Date</a>
             </li>
             <li>
-              <a id="sort-title" role='listbox'>Titre</a>
+              <a href="#" id="sort-title" role='listbox'>Titre</a>
             </li>
           </ul>
         </div>
@@ -74,7 +76,9 @@
     <div class="lightbox-modal" aria-label="image closeup view" aria-hidden="true">
       <div class="lightbox-modal-content">
         <div class="lightbox-modal-content__left">
-          <i class="fas fa-chevron-left" role="button" title="Previous image"></i>
+          <a href="#" class="btn-previous-picture" role="button" title="Previous image">
+            <i class="fas fa-chevron-left"></i>
+          </a>
         </div>
         <div class="lightbox-modal-content__img">
           <img class="lightbox-modal-img" src="" alt="" />
@@ -82,8 +86,12 @@
           <p class="lightbox-modal-text"></p>
         </div>
         <div class="lightbox-modal-content__right">
-          <i class="fas fa-times btn-close-picture" role="button" title="Close dialog"></i>
-          <i class="fas fa-chevron-right" role="button" title="Next image"></i>
+          <a href="#" class="btn-close-picture" role="button" title="Close dialog">
+            <i class="fas fa-times"></i>
+          </a>
+          <a href="#" class="btn-next-picture" role="button" title="Next image">
+            <i class="fas fa-chevron-right"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -92,7 +100,9 @@
       <div class="form-modal">
         <div class="form-modal__head" aria-label="contact form header">
           <h1 id="form-title"></h1>
-          <i  type="button" title="Close Contact form" class="fas fa-times fa-times--clear close-contact"></i>
+          <a href="#" title="Close Contact form" type="button" class="close-contact">
+            <i type="button" class="fas fa-times fa-times--clear"></i>
+          </a>
         </div>
         <form id="contact" name="contact" action="photographer-page.html" method="POST">
           <div class="formData">

@@ -58,6 +58,8 @@ export default function profilFactory(data) {
         article.setAttribute('class', 'card-photography');
 
         const a = document.createElement('a');
+        a.setAttribute('href', '#');
+        a.setAttribute('title', 'lightbox-picture-open');
 
         if (image) {
             const photography = `../assets/images/${firstname}/${image}`;    
