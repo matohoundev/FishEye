@@ -7,29 +7,24 @@ let btnPrevious = document.querySelector('.fa-chevron-left');
 
 export default class modalPictures {
     static currentMedia;
-    init(medias, clickedMedia, namePhotographe, e) {
+    init(medias, clickedMedia, namePhotographe, typeMedia) {
         this.currentMedia = clickedMedia;
-        let isImg = e.target.classList.contains('card-photography__img');
-        let isVideo = e.target.classList.contains('card-photography__video');
         // launch modal event
-       this.displayModal();
-
-        if (isImg || isVideo) {      
-            let btnClosePicture = document.querySelector('.btn-close-picture');
+       this.displayModal();  
+        let btnClosePicture = document.querySelector('.btn-close-picture');
             
-            btnClosePicture.addEventListener('click', this.closeModal);
-            btnNext.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'next'))
-            btnPrevious.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'previous'))
-            this.onKeyboard(medias, namePhotographe)
+        btnClosePicture.addEventListener('click', this.closeModal);
+        btnNext.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'next'))
+        btnPrevious.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'previous'))
+        this.onKeyboard(medias, namePhotographe)
             
-            if (isImg) {
-                this.displayImage(clickedMedia.title, clickedMedia.image,namePhotographe)
+        if (typeMedia === 'img') {
+            this.displayImage(clickedMedia.title, clickedMedia.image, namePhotographe)
                 
-            } else {
-                this.displayVideo(clickedMedia.title, clickedMedia.video,namePhotographe)
-            }
-            imgText.textContent = clickedMedia.title;
+        } else {
+            this.displayVideo(clickedMedia.title, clickedMedia.video, namePhotographe)
         }
+        imgText.textContent = clickedMedia.title;
     }
     displayModal() {
         lightboxModal.style.display = 'flex';
