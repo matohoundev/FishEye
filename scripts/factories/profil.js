@@ -76,6 +76,7 @@ export default function profilFactory(data) {
             visual.setAttribute('alt', title);
             visual.setAttribute('role', 'button');
             visual.setAttribute('class', 'card-photography__video');
+            visual.setAttribute('title', title);
             a.appendChild(visual);
         }
 

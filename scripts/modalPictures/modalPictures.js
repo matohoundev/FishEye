@@ -2,39 +2,34 @@ let lightboxModal = document.querySelector('.lightbox-modal');
 let img = document.querySelector('.lightbox-modal-img');
 let video = document.querySelector('.lightbox-modal-video');
 let imgText = document.querySelector('.lightbox-modal-text');
-let btnNext = document.querySelector('.btn-next-picture');
-let btnPrevious = document.querySelector('.btn-previous-picture');
+let btnNext = document.querySelector('.fa-chevron-right');
+let btnPrevious = document.querySelector('.fa-chevron-left');
 
 export default class modalPictures {
+    static currentMedia;
     init(medias, clickedMedia, namePhotographe, e) {
+        this.currentMedia = clickedMedia;
         let isImg = e.target.classList.contains('card-photography__img');
         let isVideo = e.target.classList.contains('card-photography__video');
-
-        const picture = `../assets/images/${this.justFirstname(namePhotographe)}/`;
-
         // launch modal event
-        e.target.addEventListener('click', this.displayModal);
+       this.displayModal();
 
         if (isImg || isVideo) {      
             let btnClosePicture = document.querySelector('.btn-close-picture');
             
             btnClosePicture.addEventListener('click', this.closeModal);
-            // incompréhensible
-            btnNext.addEventListener('click', this.nextPicture(medias, clickedMedia, namePhotographe))
-            btnPrevious.addEventListener('click', this.previousPicture(medias, clickedMedia, namePhotographe))
+            btnNext.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'next'))
+            btnPrevious.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'previous'))
+            this.onKeyboard(medias, namePhotographe)
             
             if (isImg) {
-                img.style.display = 'flex';
-                img.setAttribute('src', picture + clickedMedia.image);
-                img.setAttribute('alt', `${clickedMedia.title}`);
+                this.displayImage(clickedMedia.title, clickedMedia.image,namePhotographe)
+                
             } else {
-                video.style.display = 'flex';
-                video.setAttribute('src', picture + clickedMedia.image);
-                video.setAttribute('alt', `${clickedMedia.title}`);
+                this.displayVideo(clickedMedia.title, clickedMedia.video,namePhotographe)
             }
             imgText.textContent = clickedMedia.title;
         }
-
     }
     displayModal() {
         lightboxModal.style.display = 'flex';
@@ -45,45 +40,51 @@ export default class modalPictures {
         img.style.display = 'none';
         video.style.display = 'none';
     }  
-    
-    previousPicture(medias,  clickedMedia, photographerNameForDisplay) {
-        const currentMediaIndex = medias.findIndex(media => media.title === clickedMedia.title)
-        let mediaToDisplay;
 
-        if (currentMediaIndex === 0) {
-            mediaToDisplay = medias[medias.length - 1]
+    nextAndPreviousPicture(medias, photographerNameForDisplay, nextOrPrevious) {
+        const currentMediaIndex = medias.findIndex(media => media.title === this.currentMedia.title)
+        
+        if (nextOrPrevious === 'previous') {   
+            if (currentMediaIndex === 0) {
+                this.currentMedia = medias[medias.length - 1]
+            } else {
+                this.currentMedia = medias[currentMediaIndex - 1]
+            }
         } else {
-            mediaToDisplay = medias[currentMediaIndex - 1]
+            if (currentMediaIndex + 1 === medias.length) {
+                this.currentMedia = medias[medias.length - medias.length]
+            } else {
+                this.currentMedia = medias[currentMediaIndex + 1]
+            }
         }
-        this.displayImage(mediaToDisplay.title, mediaToDisplay.image, photographerNameForDisplay)
-    }  
 
-    nextPicture(medias,  clickedMedia, photographerNameForDisplay) {
-        console.log('test');
-        const currentMediaIndex = medias.findIndex(media => media.title === clickedMedia.title)
-        let mediaToDisplay;
-
-        if (currentMediaIndex === 0) {
-            mediaToDisplay = medias[medias.length + 1]
+        if (this.currentMedia.image) {
+            this.displayImage(this.currentMedia.title, this.currentMedia.image, photographerNameForDisplay)
         } else {
-            mediaToDisplay = medias[currentMediaIndex + 1]
+            this.displayVideo(this.currentMedia.title, this.currentMedia.video, photographerNameForDisplay)
         }
-        this.displayImage(mediaToDisplay.title, mediaToDisplay.image, photographerNameForDisplay)
     }  
 
     displayImage(lightboxTitle, lightboxImage, photographerName, ) {
-        const picture = `../assets/images/${this.justFirstname(photographerName)}/`;
+        const imageName = `../assets/images/${this.justFirstname(photographerName)}/`;
 
-        img.setAttribute('src', picture + lightboxImage);
+        img.style.display = 'flex'
+        video.style.display = 'none'
+        img.setAttribute('src', imageName + lightboxImage);
         img.setAttribute('alt', `${lightboxTitle}`);
         imgText.textContent = lightboxTitle;
     }
 
     displayVideo(lightboxTitle, lightboxVideo, photographerName) {
-        const picture = `../assets/images/${this.justFirstname(photographerName)}/`;
+        const videoName = `../assets/images/${this.justFirstname(photographerName)}/`;
         
-        video.setAttribute('src', picture + lightboxVideo);
+        video.style.display = 'flex'
+        img.style.display = 'none'
+        video.setAttribute('src', videoName + lightboxVideo);
         video.setAttribute('alt', `${lightboxTitle}`);
+        video.setAttribute('controls', 'controls');
+        video.setAttribute('role', 'button');
+        video.setAttribute('title', lightboxTitle);
         imgText.textContent = lightboxTitle;
     }
 
@@ -91,5 +92,16 @@ export default class modalPictures {
         let firstname = name.split(' ')[0];
         firstname = firstname.replace('-',' ');    
         return firstname;
+    }
+    onKeyboard(medias, namePhotographe) {
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                this.nextAndPreviousPicture(medias, namePhotographe, 'next')
+            } else if (e.key === 'ArrowLeft') {
+                this.nextAndPreviousPicture(medias, namePhotographe, 'previous')
+            }
+        })
+        // btnNext.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'next'))
+        // btnPrevious.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'previous'))
     }
 }

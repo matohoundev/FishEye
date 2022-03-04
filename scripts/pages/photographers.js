@@ -2,9 +2,8 @@ import ApiServices from '../getData/api.js';
 
 import profilFactory from '../factories/profil.js';
 import Form from '../form/form.js';
-import Likes from '../likes/likes.js';
 import select from '../select/select.js';
-import modalPictures from '../modalPictures/modalPictures.js';
+import onMediaClicked from '../onMediaClicked/onMediaClicked.js';
 
 function path() {
     // on check l'url pour trouver l'id
@@ -36,8 +35,8 @@ function displayMedia(photographerName, medias) {
                 const photographerModel = profilFactory(media);
                 const userCardMediaDOM = photographerModel.getMedia(photographerName);
                 listPhotographer.appendChild(userCardMediaDOM).addEventListener('click', (e) => {
-                    Likes(e);
-                });   
+                    onMediaClicked(mediaSorted, media, photographerName, e);
+                });  
             });
         });
     });
@@ -46,9 +45,8 @@ function displayMedia(photographerName, medias) {
         const photographerModel = profilFactory(media);
         const userCardMediaDOM = photographerModel.getMedia(photographerName);
         listPhotographer.appendChild(userCardMediaDOM).addEventListener('click', (e) => {
-            Likes(e);
-            new modalPictures().init(medias, media, photographerName, e);
-        });   
+            onMediaClicked(medias, media, photographerName, e);
+        });  
     });
 }
 // on envoie les likes et le prix en fonction du profil reçu
