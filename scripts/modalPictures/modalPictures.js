@@ -99,9 +99,9 @@ export default class modalPictures {
                 this.nextAndPreviousPicture(medias, namePhotographe, 'next')
             } else if (e.key === 'ArrowLeft') {
                 this.nextAndPreviousPicture(medias, namePhotographe, 'previous')
+            } else if (e.key === 'Escape') {
+                this.closeModal()
             }
         })
-        // btnNext.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'next'))
-        // btnPrevious.addEventListener('click', () => this.nextAndPreviousPicture(medias, namePhotographe, 'previous'))
     }
 }
