@@ -106,7 +106,7 @@ export default function profilFactory(data) {
         divLike.appendChild(heart);
         return li;
     }
-    function getRank(likes) {
+    function getPricesAndLikes(likes) {
         const rank = document.querySelector('.rank');
 
         const div = document.createElement('div');
@@ -127,5 +127,5 @@ export default function profilFactory(data) {
         rank.appendChild(pPrice);
         return rank;
     }
-    return { id, name, portrait, city, country, tagline, price, title, image, likes, date, video, getProfil, getMedia, getRank };
+    return { id, name, portrait, city, country, tagline, price, title, image, likes, date, video, getProfil, getMedia, getPricesAndLikes };
 }

@@ -6,22 +6,21 @@ import select from '../select/select.js';
 import onMediaClicked from '../onMediaClicked/onMediaClicked.js';
 
 function path() {
-    // on check l'url pour trouver l'id
+    // check url for id
     const url = window.location.search;
     const urlParams = new URLSearchParams(url);
     const id = urlParams.get('id');
     return id;
 }
-// envoie toutes données pour les afficher
+// send all data for display
 function displayProfil(profil) {
     const photographersSection = document.querySelector('.banner-profil');
-    // on créé un profil avec les data reçu
     const photographerModel = profilFactory(profil);
     const userCardProfilDOM = photographerModel.getProfil();
     photographersSection.appendChild(userCardProfilDOM);
     new Form().init();
 }
-// on envoie les média en fonction du profil reçu
+//  send media for display
 function displayMedia(photographerName, medias) {
     const listPhotographer = document.querySelector('.list-photography');
     const sort = document.querySelector('.Sort');
@@ -49,10 +48,10 @@ function displayMedia(photographerName, medias) {
         });  
     });
 }
-// on envoie les likes et le prix en fonction du profil reçu
-function displayRank(profil,  likes) {
+// send prices and likes
+function displayPricesAndLikes(profil,  likes) {
     const photographerModel = profilFactory(profil);
-    photographerModel.getRank(likes);       
+    photographerModel.getPricesAndLikes(likes);       
 }
 
 (function init() {
@@ -60,13 +59,12 @@ function displayRank(profil,  likes) {
     const photographer = new ApiServices().getPhotographerById(id);
     const mediaPhotographer = new ApiServices().getMediaById(id);
     const likes = new ApiServices().getLikesById(id);
-    // const sort = new ApiServices().getMediaByIdAndSort(id);
 
-    // on dispatch toutes les données
+    // dispatch all data
     Promise.all([photographer, mediaPhotographer, likes]).then(([photographer, media, likes]) => {
         displayProfil(photographer);
         displayMedia(photographer.name, media);
-        displayRank(photographer, likes);
+        displayPricesAndLikes(photographer, likes);
     }).catch(() => {
         console.log('error Api');
     });

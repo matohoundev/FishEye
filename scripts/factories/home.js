@@ -39,5 +39,5 @@ export default function photographerFactory(data) {
         a.appendChild(cost);
         return li;
     }
-    return { id, name, picture, city, country, tagline, price, getUserCardDOM };
+    return { getUserCardDOM };
 }

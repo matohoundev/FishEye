@@ -1,6 +1,5 @@
 const sortSelect = document.querySelector('.sort-select');
 const blocLinks = document.querySelector('.bloc-links');
-// const liItems = document.querySelectorAll('.sort-select li');
 const svg = document.querySelector('#Layer_1');
 
 let toggleIndex;
@@ -30,6 +29,4 @@ export default class select {
             return e.target.id;
         }
     }
-    
-    // liItems.forEach((li) => li.addEventListener('click', toggleDropDown));
 }

@@ -1,6 +1,6 @@
 import ApiServices from '../ApiServices/apiServices.js';
 
-import photographerFactory from '../factories/photographer.js';
+import photographerFactory from '../factories/home.js';
 
 function displayData(photographers) {
     const photographersSection = document.querySelector('.all-photographers');
@@ -13,7 +13,7 @@ function displayData(photographers) {
 }
 
 (function init() {
-    // Récupère les datas des photographes
+    // Retrieves data from photographers
     new ApiServices().getPhotographers().then((data) => {
         displayData(data);
     }).catch(() => {
