@@ -1,6 +1,7 @@
 button {
   width: 50vw;
   height: 35px;
+  padding-inline: 19px;
   background-color: $main-color;
   border: none;
   border-radius: $curler;
@@ -9,11 +10,9 @@ button {
     width: 170px;
     height: 69px;
   }
-    &#btn-contact {
-      :hover, :focus {
+    &.btn-contact_focus:hover, &.btn-contact_focus:focus {
       background-color: $secondary-color-box;
       color: $color-dark;
-    }
   }
 }
 
