@@ -10,7 +10,7 @@ button {
     width: 170px;
     height: 69px;
   }
-    &.btn-contact_focus:hover, &.btn-contact_focus:focus {
+    &.btn_focus:hover, &.btn_focus:focus {
       background-color: $secondary-color-box;
       color: $color-dark;
   }
@@ -27,4 +27,8 @@ button {
     width: 170px;
     height: 69px;
   }
+  &.btn_focus:hover, &.btn_focus:focus {
+    background-color: $secondary-color-box;
+    color: $color-dark;
+}
 }
