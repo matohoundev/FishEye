@@ -1,4 +1,4 @@
-import ApiServices from '../getData/api.js';
+import ApiServices from '../ApiServices/apiServices.js';
 
 import photographerFactory from '../factories/photographer.js';
 

@@ -15,6 +15,7 @@ export default function profilFactory(data) {
 
         const btnContact = document.createElement('button');
         btnContact.setAttribute('id', 'btn-contact');
+        btnContact.setAttribute('class', 'btn-contact_focus');
         btnContact.setAttribute('title', 'Contact Me');
         btnContact.textContent = 'Contactez-moi';
 

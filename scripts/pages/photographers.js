@@ -1,4 +1,4 @@
-import ApiServices from '../getData/api.js';
+import ApiServices from '../ApiServices/apiServices.js';
 
 import profilFactory from '../factories/profil.js';
 import Form from '../form/form.js';
